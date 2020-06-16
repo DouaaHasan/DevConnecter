@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://Dua:HaOfU9aaIyGkr8gK@devconnecter-ws7vw.mongodb.net/<dbname>?retryWrites=true&w=majority",
+  "jwtSecret": "myscrettoken"
+}

@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../../models/User");
 const config = require("config");
-const scret = config.get("jwtSecret");
+const secret = config.get("jwtSecret");
 // @route   POST api/users
 // @desc    Register user
 // @access  Public
@@ -14,8 +14,8 @@ router.post(
   "/",
   [
     check("name", "Name is required.").not().isEmpty(),
-    check("email", "Pleace include a valid email.").isEmail(),
-    check("password", "Pleace enter a password with 6 or more characters.").isLength({ min: 6 }),
+    check("email", "Please include a valid email.").isEmail(),
+    check("password", "Please enter a password with 6 or more characters.").isLength({ min: 6 }),
   ],
   async (req, res) => {
     const errors = validationResult(req);
@@ -43,12 +43,13 @@ router.post(
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(password, salt);
       await user.save();
+
       const payload = {
         user: {
           id: user.id,
         },
       };
-      jwt.sign(payload, scret, { expiresIn: 36000 }, (error, token) => {
+      jwt.sign(payload, secret, { expiresIn: 36000 }, (error, token) => {
         if (error) throw error;
         res.json(token);
       });

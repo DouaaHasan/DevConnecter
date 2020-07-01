@@ -1,5 +1,5 @@
 {
-  "mongoURI": "mongodb+srv://Dua:HaOfU9aaIyGkr8gK@devconnecter-ws7vw.mongodb.net/<DevConnecter>?retryWrites=true&w=majority",
+  "mongoURI": "mongodb+srv://Dua:fI0X6JqVpiywSd3z@devconnecter-ws7vw.mongodb.net/devConnecter?retryWrites=true&w=majority",
   "jwtSecret": "mysecrettoken",
   "githubClientId": "615ced329d2cb2e564c4",
   "githubSecret": "d5ac143b01082e0d0852b44f16e1430a77067fff"
